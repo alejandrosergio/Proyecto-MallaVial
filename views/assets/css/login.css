@@ -1,0 +1,347 @@
+:root{
+    --color_inicial: #212529;
+    --color_secundario: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-slider{
+    width: 100%;
+    max-width: 50%;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 0.325em var(--color_inicial),  
+                0 0.625rem 2em var(--color_inicial); 
+    position: relative;
+}
+
+.slider{
+    display: flex;
+    width: 600%;
+    height: 100vh;
+    margin-left: -100%;
+}
+
+.slider__section{
+    width: 100%;
+}
+
+.slider__img{
+    display: block;
+    width:100%;
+    height:100%;
+    object-fit: fill;
+}
+
+.slider__btn{
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--color_secundario);
+    color: var(--color_inicial);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 2.5rem;
+}
+
+.slider__btn:hover{
+    background:var(--color_inicial);
+    color: var(--color_secundario);
+    line-height: 2.5rem;
+}
+
+.slider__btn--left{
+    left: 0.625rem;
+}
+
+.slider__btn--rigth{
+    right: 0.625rem;
+}
+
+
+/* FORM */
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .contentBx{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentBx .formBx{
+    width: 50%;
+}
+
+section .contentBx .formBx h2{
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    border-bottom: 0.25rem solid var(--color_inicial); 
+    display: inline-block;
+    letter-spacing: 0.0625rem;
+}
+
+section .contentBx .formBx .inputBx select{
+    margin-bottom: 1.25rem;
+}
+
+section .contentBx .formBx .inputBx{
+    margin-bottom: 1.25rem;
+}
+
+select,input[type="checkbox"]{
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx span{
+    font-size: 1rem;
+    margin-bottom: 0.3125rem;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    letter-spacing: 0.0625rem;
+}
+
+section .contentBx .formBx .inputBx>input,select{
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    outline: none;
+    font-weight: 400;
+    border: 0.0625rem solid #607d8b;
+    font-size: 1rem;
+    letter-spacing: 0.0625rem;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 1.875rem;
+}
+
+input[type=email]:focus,input[type=password]:focus,select:focus{
+    border-color: var(--color_inicial);
+    box-shadow: 0 0 .5rem 0 var(--color_inicial);
+}
+
+section .contentBx .formBx .remember{
+    margin-bottom: 0.625rem;
+    color: #607d8b;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+section .contentBx .formBx .inputBx p{
+    color: #607d8b;
+}
+section .contentBx .formBx .inputBx p a{
+    color: var(--color_inicial);
+}
+
+
+/* Button */
+
+.btn{
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid var(--color_inicial);
+    background: none;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1em 0;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.875rem;
+    color: var(--color_inicial);
+    text-transform: uppercase;
+}
+
+.btn:hover{
+    color: var(--color_secundario);
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background: var(--color_inicial);
+    z-index: -1;
+    transition: 0.8s;
+}
+
+
+.btn::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+
+.btn:hover:before{
+    height: 180%;
+}
+
+/* Button Float - AYUDA */
+
+#btn-mas{
+    display: none;
+
+}
+.button-float{
+    position: fixed;
+    z-index: 20;
+    bottom: 1rem;
+    right: 1.65rem;
+}
+.opciones a, .button-desplegable{
+    display: block;
+    text-decoration: none;
+    background: var(--color_inicial);
+    color: var(--color_secundario);
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0.125rem gray;
+    transition: all 500ms ease; 
+}
+
+.opciones a:hover{
+    background:var(--color_secundario);
+    color: var(--color_inicial);
+    font-size: 1.5625rem;
+}
+
+.opciones a{
+    margin-bottom: -0.9375rem;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .opciones a{
+    margin-bottom: 0.625rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.button-desplegable{
+    cursor: pointer;
+    font-size: 1.475rem;
+}
+.button-desplegable:hover{
+    background: var(--color_secundario);
+    color: var(--color_inicial);
+    font-size: 2rem;
+}
+
+#btn-mas:checked~ .btn-mas .button-desplegable{
+    transform: rotate(175deg);
+    font-size: 1.875rem;
+}
+
+span{
+    padding: .5em;
+}
+
+/* checkbox */
+
+
+.checkbox .input-assumpte {
+    display: none;
+}
+
+.input-assumpte + label::before {
+    cursor: pointer;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    display: inline-block;
+    transition-duration: 0.3s;
+    width: 15px;
+    height: 15px;
+    content: '';
+}
+
+.input-assumpte:checked + label::before {
+    background: var(--color_inicial);
+}
+
+.fa-address-card,.fa-envelope,.fa-lock{
+    color: var(--color_inicial);
+    margin: 0 .3em 0 0;
+}
+
+
+/* MEDIA */
+
+@media (max-width: 803px){
+    .container-slider{
+        max-width: 100%;
+    }
+    section .container-slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    section .contentBx{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    section .contentBx .formBx{
+        width: 100%;
+        padding: 2.5rem;
+        background: rgba(255 255 255 / 0.9);
+        margin: 3.125rem;
+        border-radius: 0.9375rem;
+    }
+
+    .slider__btn{
+        display: none;
+    }
+}
+
+.letras_animation{
+    color: #222;
+    font-weight: 100;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Khula", sans-serif;
+    height: 30vh;
+    box-sizing: border-box;
+    letter-spacing: 6px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+span {
+    display: inline-block;
+    }

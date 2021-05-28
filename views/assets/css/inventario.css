@@ -1,0 +1,13 @@
+.container_inventario{
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    height: 68vh;
+    box-shadow: 4px 4px 3px 7px gray;
+}
+.container_fomr_inventario{
+    display: flex;
+    justify-content: center;
+}
+
+
