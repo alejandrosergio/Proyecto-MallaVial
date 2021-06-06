@@ -50,7 +50,7 @@
                     <div class="inputBx">
                         <span><i class="fas fa-address-card"></i> Rol del Usuario</span>
                         <select required name="rol">
-                        <option value="">Seleccione Rol</option>
+                        <option value="1">Seleccione Rol</option>
                             <?php
                                 foreach($query as $rol){
                                     echo "<option value=".$rol["rol_id"].">".$rol["rol_descripcion"]."</option>";
@@ -60,11 +60,11 @@
                         <input type="number" hidden value="1" name="validar">
                         <div class="inputBx">
                             <span><i class="fas fa-envelope"></i> Correo Electrónico</span>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" value="sahernandez0801@misena.edu.co" required>
                         </div>
                         <div class="inputBx">
                             <span><i class="fas fa-lock"></i> Contraseña</span>
-                            <input type="password" name="password" required>
+                            <input type="password" name="password" value="1094881080" required>
                         </div><br>
                         <!-- <div class="checkbox remember">
                             <input type="checkbox" class="input-assumpte" id="input-confidencial"/>
